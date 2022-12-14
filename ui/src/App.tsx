@@ -6,9 +6,9 @@ export function App() {
   const [response, setResponse] = React.useState<string>();
   const [error, setError] = React.useState<Error>();
 
-  const fetchAndDisplayResponse = async () => {
+  const fetchAndDisplayResponse = (endpoint: string) => async () => {
     try {
-      const result = await fetch("http://localhost:1234/hello", {
+      const result = await fetch(`http://localhost:1234${endpoint}`, {
         method: "POST",
         body: 'Hello from Wasm',
       });
@@ -32,9 +32,14 @@ export function App() {
         response will appear in the textarea.
       </Typography>
       <Stack direction="row" alignItems="start" spacing={2} sx={{ mt: 4 }}>
-        <Button variant="contained" onClick={fetchAndDisplayResponse}>
-          Call backend
-        </Button>
+        <Stack spacing={2}>
+          <Button variant="contained" onClick={fetchAndDisplayResponse('/echo')}>
+            Echo From Backend
+          </Button>
+          <Button variant="contained" onClick={fetchAndDisplayResponse('/echo/reversed')}>
+            Reverse From Backend
+          </Button>
+        </Stack>
 
         <TextField
           label="Backend response"
