@@ -17,8 +17,6 @@ As of Docker Desktop v4.15.0, you must have the experimental containerd image st
 
 Note that your firewall may prompt you to allow port 1234 for the extension.
 
-Click [this link](docker-desktop://extensions/marketplace?extensionId=crigneydocker/wasm-extension&tag=latest) or run:
-
 ```
 docker extension install crigneydocker/wasm-extension
 ```
