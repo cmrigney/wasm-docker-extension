@@ -20,15 +20,9 @@ export function App() {
 
   return (
     <>
-      <Typography variant="h3">Docker extension demo</Typography>
+      <Typography variant="h3">Docker Wasm Extension Demo</Typography>
       <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
-        This is a basic page rendered with MUI, using Docker's theme. Read the
-        MUI documentation to learn more. Using MUI in a conventional way and
-        avoiding custom styling will help make sure your extension continues to
-        look great as Docker's theme evolves.
-      </Typography>
-      <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
-        Pressing the below button will trigger a request to the backend. Its
+        Pressing the below buttons will trigger a request to a <strong>Wasm</strong> backend running an HTTP Server. Its
         response will appear in the textarea.
       </Typography>
       <Stack direction="row" alignItems="start" spacing={2} sx={{ mt: 4 }}>
